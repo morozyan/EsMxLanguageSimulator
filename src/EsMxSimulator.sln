@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsMxSimulator.Core", "EsMxSimulator.Core\EsMxSimulator.Core.csproj", "{C5C17AB6-6E4A-4244-8CAE-CA0D2DC33F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsMxSimulator.NumberApp", "EsMxSimulator.NumberApp\EsMxSimulator.NumberApp.csproj", "{BF3EAD1D-49D8-47BC-A57B-1783372670E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5C17AB6-6E4A-4244-8CAE-CA0D2DC33F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C17AB6-6E4A-4244-8CAE-CA0D2DC33F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C17AB6-6E4A-4244-8CAE-CA0D2DC33F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C17AB6-6E4A-4244-8CAE-CA0D2DC33F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF3EAD1D-49D8-47BC-A57B-1783372670E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3EAD1D-49D8-47BC-A57B-1783372670E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3EAD1D-49D8-47BC-A57B-1783372670E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF3EAD1D-49D8-47BC-A57B-1783372670E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08051FB9-A686-4DF1-A5FC-B622D42AB57C}
+	EndGlobalSection
+EndGlobal
