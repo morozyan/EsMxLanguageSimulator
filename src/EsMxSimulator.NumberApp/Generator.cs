@@ -8,11 +8,14 @@ using Microsoft.Extensions.Logging;
 using EsMxSimulator.Core.Services;
 using EsMxSimulator.Core.Models;
 using System.Web.Http;
+using Microsoft.Net.Http.Headers;
 
 namespace EsMxSimulator.NumberApp;
 
 public class Generator
 {
+    private const string GuessedNumberHeaderName = "guessed_number";
+
     private readonly INumberSimulator _numberSimulator;
 
     public Generator(INumberSimulator numberSimulator)
@@ -37,7 +40,9 @@ public class Generator
         try
         {
             result = await _numberSimulator.GuessNumber(0, endNumber);
-            req.HttpContext.Response.Headers.Add("guessed_number", result.Number.ToString());
+
+            req.HttpContext.Response.Headers.Add(HeaderNames.AccessControlExposeHeaders, GuessedNumberHeaderName);
+            req.HttpContext.Response.Headers.Add(GuessedNumberHeaderName, result.Number.ToString());
         }
         catch (Exception e)
         {
