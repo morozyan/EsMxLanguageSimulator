@@ -11,11 +11,11 @@ public class NumberSimulator : INumberSimulator
         _speechService = speechService;
     }
 
-    public async Task<Turn> GuessNumber(int start, int end)
+    public async Task<Turn> GuessNumber(int start, int end, CancellationToken cancellationToken)
     {
         var newNumber = GenerateNumber(start, end);
 
-        var number = await _speechService.Generate(newNumber);
+        var number = await _speechService.Generate(newNumber, cancellationToken);
 
         return new Turn
         {

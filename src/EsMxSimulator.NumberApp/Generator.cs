@@ -9,6 +9,7 @@ using EsMxSimulator.Core.Services;
 using EsMxSimulator.Core.Models;
 using System.Web.Http;
 using Microsoft.Net.Http.Headers;
+using System.Threading;
 
 namespace EsMxSimulator.NumberApp;
 
@@ -26,7 +27,7 @@ public class Generator
     [FunctionName("Generator")]
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
-        ILogger log)
+        ILogger log, CancellationToken cancellationToken)
     {
         var endNumberValue = req.Query["maxValue"];
 
@@ -39,7 +40,7 @@ public class Generator
         Turn result;
         try
         {
-            result = await _numberSimulator.GuessNumber(0, endNumber);
+            result = await _numberSimulator.GuessNumber(0, endNumber, cancellationToken);
 
             req.HttpContext.Response.Headers.Add(HeaderNames.AccessControlExposeHeaders, GuessedNumberHeaderName);
             req.HttpContext.Response.Headers.Add(GuessedNumberHeaderName, result.Number.ToString());

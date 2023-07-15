@@ -4,5 +4,5 @@ namespace EsMxSimulator.Core.Services;
 
 public interface INumberSpeechService
 {
-    Task<Number> Generate(int newNumber);
+    Task<Number> Generate(int newNumber, CancellationToken cancellationToken);
 }

@@ -20,14 +20,14 @@ public class NumberSpeechService : INumberSpeechService
         _numberBlobClient = numberBlobClient;
     }
 
-    public async Task<Number> Generate(int newNumber)
+    public async Task<Number> Generate(int newNumber, CancellationToken cancellationToken)
     {
         var voice = ChooseVoice();
 
-        var number = await _numberBlobClient.DownloadAsync(newNumber, voice)
+        var number = await _numberBlobClient.DownloadAsync(newNumber, voice, cancellationToken)
             ?? await GenerateNumber(newNumber, voice);
 
-        await _numberBlobClient.UploadAsync(newNumber, voice, number.Voice);
+        await _numberBlobClient.UploadAsync(newNumber, voice, number.Voice, cancellationToken);
         return number;
     }
 
