@@ -1,6 +1,6 @@
 # EsMxLanguageSimulator
 
-TBD
+The endpoint provides an audio stream for random numbers in the selected range in Mexican Spanish.
 
 ## The used technologies
 - Azure Cognitive Services (Speech service, Text to speech)
